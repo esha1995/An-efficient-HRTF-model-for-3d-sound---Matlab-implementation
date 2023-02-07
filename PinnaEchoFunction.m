@@ -42,4 +42,4 @@ for n = 1:5
     end
 end
   
-out = y;
+out = conv(x, h);
