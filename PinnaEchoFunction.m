@@ -41,21 +41,5 @@ for n = 1:5
         h(d1) = h(d1) + P(n) * w1;
     end
 end
-
-
-y = zeros(length(x) + ceil(max(d)),1);
-
-for n = 1:length(y)
-   if n < length(x)
-     y(n) = x(n);       
-       for k = 1:length(P)
-          frac = d(k) - floor(d(k));
-          if n > (floor(d(k)) + 1) 
-              y(n) = y(n) + (P(k) * x(n - floor(d(k))) * (1-frac) + P(k) * x(n - ceil(d(k))) * frac);
-          end
-       end
-   end
-end
   
-
 out = y;
